@@ -9,11 +9,9 @@ public class ApiServiceEndpoints {
     }
 
     private static final String VERSION = ConfigFactory.create(ServiceConfig.class).basePath();
+    private static final String LOGIN = ConfigFactory.create(ServiceConfig.class).loginUrl();
 
-    public static final String GET_TOKEN = "v1/token";
-
-    public static final String AIRLINES = VERSION + "airlines";
-    public static final String AIRLINES_BY_ID = VERSION + "airlines/%s";
+    public static final String GET_TOKEN = LOGIN + "v1/token";
     public static final String PASSENGER = VERSION + "passenger";
     public static final String PASSENGER_BY_ID = VERSION + "passenger/%s";
 

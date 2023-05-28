@@ -1,4 +1,4 @@
-package org.example.rest.api.testservice;
+package org.example.testservice;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
@@ -36,19 +36,14 @@ public class TestServiceApi extends RestHelper {
         return postUrlEncoded(ApiServiceEndpoints.GET_TOKEN, formParams);
     }
 
-    @Step("GET v2/airlines - Get all airlines details")
-    public Response getAllAirlines() {
-        return get(ApiServiceEndpoints.AIRLINES);
-    }
-
-    @Step("GET v2/airlines/{0} - Get airline by airline ID")
-    public Response getAirlineById(int id) {
-        return get(String.format(ApiServiceEndpoints.AIRLINES_BY_ID, id));
-    }
-
     @Step("POST v2/passenger/ - Create passenger")
     public Response createPassenger(PassengerRequest passenger) {
         return post(ApiServiceEndpoints.PASSENGER, passenger);
+    }
+
+    @Step("PUT v2/passenger/{0} - Update every detail of a passenger.")
+    public Response putPassenger(String id, PassengerRequest passenger) {
+        return put(String.format(ApiServiceEndpoints.PASSENGER_BY_ID, id), passenger);
     }
 
     @Step("GET v2/passenger/{0} - Get passenger by ID")
