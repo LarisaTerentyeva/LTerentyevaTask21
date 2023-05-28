@@ -22,5 +22,4 @@ public class ResponseDto {
     private int page;
     @JsonProperty("total_pages")
     private int totalPages;
-    private Support support;
 }

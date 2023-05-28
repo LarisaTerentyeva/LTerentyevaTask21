@@ -21,5 +21,10 @@ public class AirlineItem {
     private String headQuaters;
     private String logo;
     private Long id;
+    @JsonProperty("_id")
+    private String database_id;
     private String slogan;
+    @JsonProperty("__v")
+    @Builder.Default
+    private int v = 0;
 }
