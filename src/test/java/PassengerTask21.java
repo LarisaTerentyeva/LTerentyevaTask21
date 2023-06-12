@@ -110,7 +110,7 @@ public class PassengerTask21 {
 
     @Test
     @Story("Delete passenger data")
-    @Description("Delete passenger data and check the error message")
+    @Description("Delete passenger data, check that passenger data is deleted and check the message")
     void deletePassengerTest() {
         PassengerRequest passenger = newPassengerData();
 
@@ -123,7 +123,7 @@ public class PassengerTask21 {
 
     @Test
     @Story("Can not get deleted passenger data")
-    @Description("Delete passenger data and check that passenger data is deleted")
+    @Description("Delete passenger data and check that user can not get the deleted passenger data")
     void getDeletedPassengerTest() {
         PassengerRequest passenger = newPassengerData();
 
